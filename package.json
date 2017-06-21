@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node promise.js",
     "promise": "node promise.js",
-    "callbacks": "node callbacks.js",
+    "callback": "node callbacks.js",
     "generator": "node generator.js",
     "event-emitter": "node eventEmitter.js"
   },

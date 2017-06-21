@@ -1,5 +1,9 @@
-# Promises and generator examples
-Some experiments using yield syntax with promises and the co library. With and equivilents with native just using native promises.
+# Various asynchronous techniques in javascript.
+## Techniques covered
+* Promises
+* Callbacks
+* Generator functions (using co library)
+* EventEmitter
 
 ## Installing
 
@@ -7,8 +11,18 @@ Some experiments using yield syntax with promises and the co library. With and e
 
     $ npm install
 
-## Run the app
-    $  npm start
+## Runing the examples
+### Promises
+    $  npm run promise
+
+### Callbacks
+    $  npm run callback
+
+### Generators
+    $  npm run generator
+
+### Generators
+    $  npm run event-emitter
 
 ## 3rd Party libraries
 
