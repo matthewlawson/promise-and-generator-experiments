@@ -32,6 +32,39 @@ promiseOne()
 
   });
 
+// no nesting:
+promiseOne()
+  .then(val => {
+    console.log(val, "run next ...");
+    return promiseTwo();
+  }).then(val => {
+    console.log(val, "run next ...");
+    return promiseThree();
+  }).then(val => {
+    console.log(val, "All Promises Ran");
+  })
+  .catch(err => {});
+
+// a bit cleaner:
+promiseOne()
+  .then(val => console.log(val, "run next ..."))
+  .then(promiseTwo)
+  .then(val => console.log(val, "run next ..."))
+  .then(promiseThree)
+  .then(val => console.log(val, "All Promises Ran"))
+  .catch(err => {});
+
+// or, even cleaner (too clean?!):
+const printWithMsg = (msg) => (val) => console.log(val, msg);
+
+promiseOne()
+  .then(printWithMsg("run next ..."))
+  .then(promiseTwo)
+  .then(printWithMsg("run next ..."))
+  .then(promiseThree)
+  .then(printWithMsg("All Promises Ran"))
+  .catch(err => {});
+
 /**
  * Fig Three, Passing data from one promise to another
  * - If the payload of promise one needs to be passed to promise 3 it needs to be declared outside of the scope.
